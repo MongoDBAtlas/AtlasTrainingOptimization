@@ -7,4 +7,4 @@
 
 0. **PreWork**
 
-   - Provision database [GitHub] [0]
+   - Provision database [GitHub][0]
