@@ -8,3 +8,6 @@
 0. **PreWork**
 
    - Provision database [GitHub][0]
+
+
+[0]: https://github.com/MongoDBAtlas/AtlasTrainingOptimization/tree/main/00.pre-work
