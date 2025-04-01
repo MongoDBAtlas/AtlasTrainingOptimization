@@ -1,4 +1,4 @@
-<img width="1292" alt="image" src="https://github.com/user-attachments/assets/3e1264fd-022f-434e-b0ee-2e79e3c95ba8" /><img src="https://companieslogo.com/img/orig/MDB_BIG-ad812c6c.png?t=1648915248" width="50%" title="Github_Logo"/> <br>
+<img src="https://companieslogo.com/img/orig/MDB_BIG-ad812c6c.png?t=1648915248" width="50%" title="Github_Logo"/> <br>
 
 
 # MongoDB Atlas Training Optimization
