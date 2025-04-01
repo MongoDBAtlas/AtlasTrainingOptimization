@@ -1,4 +1,4 @@
-<img src="https://companieslogo.com/img/orig/MDB_BIG-ad812c6c.png?t=1648915248" width="50%" title="Github_Logo"/> <br>
+<img width="1292" alt="image" src="https://github.com/user-attachments/assets/3e1264fd-022f-434e-b0ee-2e79e3c95ba8" /><img src="https://companieslogo.com/img/orig/MDB_BIG-ad812c6c.png?t=1648915248" width="50%" title="Github_Logo"/> <br>
 
 
 # MongoDB Atlas Training Optimization
@@ -43,7 +43,7 @@ Hands-on에서는 Id/password를 이용하는 방식의 데이터베이스 계�
 데이터 베이스 접근 테스트를 위해서 접근 하려는 컴퓨터의 IP 주소를 방화벽에 허용 해 주어야 합니다.    
 Security의 Network Access메뉴를 선택 합니다.
 <img src="/00.pre-work/images/images05.png" width="80%" height="80%">  
-Add IP Address를 클릭하고 Add IP Access List Entry 에서 Add current IP Address를 클릭하하고 Confirm을 선택 합니다.   
+Add IP Address를 클릭하고 Add IP Access List Entry 에서 Add current IP Address를 클릭하고 Confirm을 선택 합니다.   
 방화벽 설정은 1분 가량의 시간이 소요 됩니다.
 
 #### Atlas credit 적용
@@ -51,9 +51,14 @@ MongoDB Atlas에서 제공하는 모니터링 툴을 활용하기 위해서는 M
 쿼리 최적화 실습에 앞서, M10 클러스터 배포를 위한 크레딧을 적용한 후 M10 클러스터를 배포합니다.
 <img src="/00.pre-work/images/images24.png" width="80%" height="80%">  
 콘솔 상단의 Billing 버튼을 클릭해 Billing 페이지로 이동합니다.
-Apply code 버튼을 눌러, "GETATLAS"라는 코드를 입력합니다. 
-크레딧이 성공적으로 적용되면 $100를 사용 가능한 것을 확인하시고, 앞선 절차를 반복하여 M1O 클러스터를 배포합니다.
+Apply code 버튼을 눌러, "GETATLAS"라는 코드를 입력하고 제출합니다. 
+크레딧이 성공적으로 적용되면 $100를 사용 가능한 것을 확인합니다.
 
+<img src="/00.pre-work/images/images25.png" width="80%" height="80%">  
+Credit을 아껴쓰기 위해 기존 클러스터는 삭제합니다.
+
+<img src="/00.pre-work/images/images26.png" width="80%" height="80%">  
+앞선 절차를 반복하여 새로운 클러스터를 배포하되,tier만 M10으로 바꿔서 배포합니다.
 
 #### 기타 필요한 소프트웨어
 MongoDB에 접속하고 데이터를 조회 하는 GUI Tool (Compass)를 다운로드 합니다.
