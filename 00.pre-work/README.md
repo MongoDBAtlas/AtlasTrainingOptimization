@@ -46,6 +46,14 @@ Security의 Network Access메뉴를 선택 합니다.
 Add IP Address를 클릭하고 Add IP Access List Entry 에서 Add current IP Address를 클릭하하고 Confirm을 선택 합니다.   
 방화벽 설정은 1분 가량의 시간이 소요 됩니다.
 
+#### Atlas credit 적용
+MongoDB Atlas에서 제공하는 모니터링 툴을 활용하기 위해서는 M10 이상의 Atlas 클러스터 티어를 배포해야 합니다. 
+쿼리 최적화 실습에 앞서, M10 클러스터 배포를 위한 크레딧을 적용한 후 M10 클러스터를 배포합니다.
+<img src="/00.pre-work/images/images24.png" width="80%" height="80%">  
+콘솔 상단의 Billing 버튼을 클릭해 Billing 페이지로 이동합니다.
+Apply code 버튼을 눌러, "GETATLAS"라는 코드를 입력합니다. 
+크레딧이 성공적으로 적용되면 $100를 사용 가능한 것을 확인하시고, 앞선 절차를 반복하여 M1O 클러스터를 배포합니다.
+
 
 #### 기타 필요한 소프트웨어
 MongoDB에 접속하고 데이터를 조회 하는 GUI Tool (Compass)를 다운로드 합니다.
