@@ -4,7 +4,8 @@
 # MongoDB Atlas Training Optimization
 
 ### Create diverse indexes
-MongoDB에서 제공하는 다양한 타입의 인덱스를 생성해 빠른 데이터 액세스 조회 및 각 기능을 확인합니다. mongosh로 클러스터 내 sample_mflix DB에 접속합니다.
+MongoDB에서 제공하는 다양한 타입의 인덱스를 생성해 빠른 데이터 액세스 조회 및 각 기능을 확인합니다. 
+mongosh로 클러스터 내 sample_mflix DB에 접속합니다.
 ```
 mongosh "mongodb+srv://{host명}.mongodb.net/" --apiVersion 1 --username <db_username>
 use sample_mflix
@@ -73,15 +74,11 @@ Array 필드에 대해서 쿼리를 할 때도, index scan을 통해 더 빠르�
 #### 4. Geospatial index
 이번에는 geospatial 샘플 데이터가 있는 sample_restaurants DB의 restaurants collection을 사용해보겠습니다.
 
-인덱스 없이 데이터를 조회해보겠습니다.
-full scan한 explain compass 화면 추가
-<img src="/01.index/images/image04.png" width="100%" height="100%">
 
-<img src="/01.index/images/image05.png" width="100%" height="100%">
 
 ```
 use sample_restaurants
-db.restaurants.find().limit(1)
+db.restaurants.findOne()
 ```
 데이터를 조회해보면 address 필드의 nested field인 coord 필드 내 geospatial 데이터가 포함되어 있습니다.
 
@@ -97,23 +94,37 @@ db.restaurants.find({
     $near: [-73.856077, 40.848447]
   }
 })
-```
-<img src="/01.index/images/image06.png" width="100%" height="100%"> 
-$near operator로 근처에 있는 레스토랑을 쿼리합니다.
-인덱스 스캔을 통해 빠르게 데이터 검색이 가능합니다.
-
-```
-db.restaurants.find({
+db.restaurants.explain().find({
   "address.coord": {
-    $near: {
-      $geometry: {
-        type: "Point",
-        coordinates: [-73.856077, 40.848447]
-      },
-      $maxDistance: 1000 // distance in meters
-    }
+    $near: [-73.856077, 40.848447]
   }
 })
 ```
-<img src="/01.index/images/image07.png" width="100%" height="100%"> 
-특정 데이터 조건을 통해 
+$near operator로 근처에 있는 레스토랑을 쿼리합니다.
+인덱스 스캔을 통해 빠르게 데이터 검색이 가능합니다.
+
+
+#### 5. TTL index
+TTL 인덱스를 활용해 일정 시간이 지나면 document가 만료되게 설정할 수 있습니다.
+TTL 인덱스를 통해 편리하게 스토리지 사이즈를 효율적으로 관리할 수 있습니다. 
+
+TTL 인덱스 테스트를 위한 샘플 데이터를 insert합니다.
+하루치 로그인 로그를 저장하는 document입니다.
+```
+use sample_log
+db.login_events.insertMany([
+{user_id: 1, login_timestamp: ISODate("2025-04-21T09:10:30Z"), location: "KR"},
+{user_id: 2, login_timestamp: ISODate("2025-04-21T12:10:30Z"), location: "US"},
+{user_id: 3, login_timestamp: ISODate("2025-04-21T13:10:30Z"), location: "KR"},
+{user_id: 4, login_timestamp: ISODate("2025-04-22T10:10:30Z"), location: "CA"},
+{user_id: 5, login_timestamp: ISODate("2025-04-22T11:30:30Z"), location: "KR"},
+])
+```
+24시간이 지난 로그인 로그 데이터는 삭제되도록 TTL index를 생성합니다.
+
+```
+db.login_events.createIndex(
+{"login_timestamp": 1},
+{expireAfterSeconds: 86400}
+)
+```
