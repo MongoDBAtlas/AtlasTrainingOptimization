@@ -1,7 +1,7 @@
 <img src="https://companieslogo.com/img/orig/MDB_BIG-ad812c6c.png?t=1648915248" width="50%" title="Github_Logo"/> <br>
 
 
-# MongoDB Atlas Training Index 
+# MongoDB Atlas Training Optimization
 
 ### Create diverse indexes
 MongoDB에서 제공하는 다양한 타입의 인덱스를 생성해 빠른 데이터 액세스 조회 및 각 기능을 확인합니다. mongosh로 클러스터 내 sample_mflix DB에 접속합니다.
