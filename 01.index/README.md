@@ -119,6 +119,7 @@ db.login_events.insertMany([
 {user_id: 4, login_timestamp: ISODate("2025-04-22T10:10:30Z"), location: "CA"},
 {user_id: 5, login_timestamp: ISODate("2025-04-22T11:30:30Z"), location: "KR"},
 ])
+db.login_events.find()
 ```
 24시간이 지난 로그인 로그 데이터는 삭제되도록 TTL index를 생성합니다.
 
@@ -127,4 +128,22 @@ db.login_events.createIndex(
 {"login_timestamp": 1},
 {expireAfterSeconds: 86400}
 )
+db.login_events.getIndexes()
 ```
+
+인덱스 생성 후 인덱스를 조회해봅니다.
+TTL 스레드는 1분에 한번씩 만료시킬 데이터가 있는지 스캔을 진행합니다. 
+
+db.login_events.find()
+약간의 시간을 두고 다시 데이터를 조회해봅니다. 
+데이터를 조회해보면 24시간 전 데이터는 삭제된 것을 확인하실 수 있습니다.
+
+#### 6. Unique index
+
+
+#### 7. Partial index
+
+
+#### 8. ESR rule
+
+#### 9. Covered query
