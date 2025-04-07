@@ -67,7 +67,7 @@ db.movies.getIndexes()
 db.movies.explain().find({genres: {$elemMatch: {$eq: 'Drama'}}})
 db.movies.explain().find({genres: {$in: ["Comedy", "Biography"]}})
 ```
-<img src="/01.index/images/image03.png" width="100%" height="100%"> 
+
 
 Array 필드에 대해서 쿼리를 할 때도, index scan을 통해 더 빠르게 데이터를 조회할 수 있습니다.
 
