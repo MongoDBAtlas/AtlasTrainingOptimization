@@ -218,7 +218,7 @@ db.movies.find(
 	{"title":1}
 )
 ````
-<img src="/03.Index and tips/images/image01.png" width="100%" height="100%">     
+<img src="/01.index/images/image01.png" width="100%" height="100%">     
 
 No index available for this query 로 인덱스가 사용 되지 않은 것을 확인 할 수 있으며 Dcouments Examined의 갯수가 23530으로 전체 문서가 스캔 된 것을 확인 할 수 있습니다.    
 또한 Documnets Returned 가 12인 것으로 전체 문서 중 12개 문서가 리턴된 것으로 12개 문서를 찾기 위해 23530 문서를 검색한 것으로 비효율적인 것을 알 수 있습니다.
@@ -230,12 +230,12 @@ E-S-R 규칙에 맞추어 인덱스를 생성 하고 Explain에서 개선된 사
 
 테스트를 위해 cast - year - title 순서로 인덱스를 생성 하고 테스트 합니다.   
 
-<img src="/03.Index and tips/images/image02.png" width="50%" height="50%">     
+<img src="/01.index/images/image02.png" width="50%" height="50%">     
 
 
 동일한 쿼리를 수행 하여 봅니다.    
 
-<img src="/03.Index and tips/images/image03.png" width="90%" height="90%">     
+<img src="/01.index/images/image03.png" width="90%" height="90%">     
 
 문서 스캔이 Index 스캔으로 변경 되고 기존에 비해 성능이 개선된 것을 확인 합니다.  
 
@@ -244,6 +244,6 @@ E-S-R 규칙에 맞추어 인덱스를 생성 하고 Explain에서 개선된 사
 인덱스를 ESR 순서로 작성합니다. (cast-title-year)   
 동일한 쿼리를 실행 하여 플랜을 확인 합니다.    
 
-<img src="/03.Index and tips/images/image04.png" width="90%" height="90%">     
+<img src="/01.index/images/image04.png" width="90%" height="90%">     
 
 Projection 항목에 title만을 출력 하도록 하고 Plan을 확인 합니다.
