@@ -34,7 +34,7 @@ explain output의 winning plan 정보에서, collection scan이 발생한 것을
 explain 결과를 확인할 때는 compass로 확인하는 것이 더 정보를 확인하기 쉽습니다.
 같은 쿼리를 compass에서도 실행해서 explain 결과를 확인해보겠습니다.
 
-<img src="/01.index/images/image01.png" width="100%" height="100%">    
+<img src="/01.index/images/image05.png" width="100%" height="100%">    
 조건을 만족하는 document를 반환하기 위해 스캔한 document, 최종적으로 반환한 document 및 실행 시간 등을 쉽게 조회할 수 있습니다.
 
 ```
@@ -50,7 +50,7 @@ db.movies.explain().find({type: "series"})
 ```
 다시 explain 결과를 실행해보면 이번에는 index scan과 fetch 단계가 실행된 것을 확인할 수 있습니다.
 
-<img src="/01.index/images/image02.png" width="100%" height="100%"> 
+<img src="/01.index/images/image06.png" width="100%" height="100%"> 
 
 마찬가지로, compass에서도 결과를 확인해봅니다. 
 
