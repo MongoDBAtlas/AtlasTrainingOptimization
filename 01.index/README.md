@@ -115,11 +115,11 @@ TTL 인덱스 테스트를 위한 샘플 데이터를 insert합니다.
 ```
 use test
 db.login_events.insertMany([
-{user_id: 1, login_timestamp: ISODate("2025-04-21T09:10:30Z"), location: "KR"},
-{user_id: 2, login_timestamp: ISODate("2025-04-21T12:10:30Z"), location: "US"},
-{user_id: 3, login_timestamp: ISODate("2025-04-21T13:10:30Z"), location: "KR"},
-{user_id: 4, login_timestamp: ISODate("2025-04-22T10:10:30Z"), location: "CA"},
-{user_id: 5, login_timestamp: ISODate("2025-04-22T11:30:30Z"), location: "KR"},
+{"user_id": 1, "login_timestamp": ISODate("2025-04-21T09:10:30Z"), "location": "KR"},
+{"user_id": 2, "login_timestamp": ISODate("2025-04-21T12:10:30Z"), "location": "US"},
+{"user_id": 3, "login_timestamp": ISODate("2025-04-21T13:10:30Z"), "location": "KR"},
+{"user_id": 4, "login_timestamp": ISODate("2025-04-22T10:10:30Z"), "location": "CA"},
+{"user_id": 5, "login_timestamp": ISODate("2025-04-22T11:30:30Z"), "location": "KR"},
 ])
 db.login_events.find()
 ```
@@ -147,11 +147,11 @@ Unique index를 활용해 특정 필드에 대해 고유한 값을 보장할 수
 ```
 use test
 db.users.insertMany([
-{user_id: 1, gender: "Female", age: 40, location: "IN"},
-{user_id: 2, gender: "Male", age: 21, location: "US"},
-{user_id: 3, gender: "Male", age: 39, location: "KR"},
-{user_id: 4, gender: "Female", age: 55, location: "CA"},
-{user_id: 5, gender: "Female", age: 34, location: "KR"},
+{"user_id": 1, "gender": "Female", "age": 40, "location": "IN"},
+{"user_id": 2, "gender": "Male", "ag"e: 21, "location": "US"},
+{"user_id": 3, "gender": "Male", "age": 39, "location": "KR"},
+{"user_id": 4, "gender": "Female", "age": 55, "location": "CA"},
+{"user_id": 5, "gender": "Female", "age": 34, "location": "KR"},
 ])
 db.users.find()
 ```
