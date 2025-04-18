@@ -200,7 +200,8 @@ db.comments.explain().find({
 ```
 2017 후에 생성된 리뷰를 찾는 쿼리를 실행하니 index scan을 진행합니다.
 
-#### 8. ESR rule
+### Index tip
+#### 1. ESR rule
 MongoDB에서는 복합 필드 인덱스가 가장 많이 사용됩니다.
 복합 필드 인덱스를 설정할 때는, 쿼리 패턴에 맞게 인덱스 필드 순서를 지정하는 것이 중요합니다.
 
