@@ -183,6 +183,9 @@ use sample_mflix
 db.comments.createIndex( 
 { date: 1 },             
 { partialFilterExpression: {date: {$gt: ISODate('2017-01-01T00:00:00.000+00:00')}} } )
+```
+
+```
 db.comments.getIndexes()
 ```
 인덱스 생성 후 인덱스를 조회해보면 date_1이라는 인덱스가 생성되었고 해당 인덱스에 대한 조건도 확인할 수 있습니다.
@@ -225,9 +228,10 @@ db.movies.find(
 No index available for this query 로 인덱스가 사용 되지 않은 것을 확인 할 수 있으며 Dcouments Examined의 갯수가 23530으로 전체 문서가 스캔 된 것을 확인 할 수 있습니다.    
 또한 Documnets Returned 가 12인 것으로 전체 문서 중 12개 문서가 리턴된 것으로 12개 문서를 찾기 위해 23530 문서를 검색한 것으로 비효율적인 것을 알 수 있습니다.
 
-E-S-R 규칙에 맞추어 인덱스를 생성 하고 Explain에서 개선된 사항을 확인 합니다.
+쿼리 성능 개선을 위해서 인덱스를 생성해보겠습니다.
 
-테스트를 위해 cast - year - title 순서로 인덱스를 생성 하고 테스트 합니다.   
+테스트를 위해 cast - year - title 순서로 인덱스를 생성 하고 테스트 합니다. 
+해당 인덱스는 exact match query - range query - sort query 순서입니다.
 
 <img src="/01.index/images/image02.png" width="50%" height="50%">     
 
