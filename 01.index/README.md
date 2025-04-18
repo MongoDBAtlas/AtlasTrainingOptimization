@@ -58,6 +58,7 @@ db.movies.explain().find({type: "series"})
 Array 값을 가진 필드에 대한 인덱스인 multikey index를 생성합니다.
 
 ```
+db.movies.findOne()
 db.movies.createIndex({genres: 1})
 db.movies.getIndexes()
 ```
