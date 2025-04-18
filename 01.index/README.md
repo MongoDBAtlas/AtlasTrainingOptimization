@@ -27,6 +27,7 @@ getIndexes() 커맨드를 활용해 각 collection에 생성된 인덱스를 확
 
 Primary index가 아닌 사용자가 직접 만드는 index를 생성하고 쿼리 시간을 비교해보겠습니다. 
 ```
+db.movies.findOne()
 db.movies.explain().find({type: "series"})
 ```
 explain output의 winning plan 정보에서, collection scan이 발생한 것을 확인합니다.
