@@ -59,7 +59,7 @@ db.movies.explain().find({type: "series"})
 Array 값을 가진 필드에 대한 인덱스인 multikey index를 생성합니다.
 
 ```
-db.movies.findOne()
+db.movies.findOne({}, {genres: 1})
 db.movies.createIndex({genres: 1})
 db.movies.getIndexes()
 ```
@@ -128,7 +128,7 @@ db.login_events.find()
 ```
 db.login_events.createIndex(
 {"login_timestamp": 1},
-{expireAfterSeconds: 86400}
+{expireAfterSeconds: 60}
 )
 db.login_events.getIndexes()
 ```
@@ -148,7 +148,7 @@ Unique index를 활용해 특정 필드에 대해 고유한 값을 보장할 수
 use test
 db.users.insertMany([
 {"user_id": 1, "gender": "Female", "age": 40, "location": "IN"},
-{"user_id": 2, "gender": "Male", "ag"e: 21, "location": "US"},
+{"user_id": 2, "gender": "Male", "age": 21, "location": "US"},
 {"user_id": 3, "gender": "Male", "age": 39, "location": "KR"},
 {"user_id": 4, "gender": "Female", "age": 55, "location": "CA"},
 {"user_id": 5, "gender": "Female", "age": 34, "location": "KR"},
