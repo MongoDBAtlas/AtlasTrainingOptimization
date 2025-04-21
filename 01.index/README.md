@@ -115,11 +115,11 @@ TTL 인덱스 테스트를 위한 샘플 데이터를 insert합니다.
 ```
 use test
 db.login_events.insertMany([
-{"user_id": 1, "login_timestamp": ISODate("2025-04-21T09:10:30Z"), "location": "KR"},
-{"user_id": 2, "login_timestamp": ISODate("2025-04-21T12:10:30Z"), "location": "US"},
-{"user_id": 3, "login_timestamp": ISODate("2025-04-21T13:10:30Z"), "location": "KR"},
-{"user_id": 4, "login_timestamp": ISODate("2025-04-22T10:10:30Z"), "location": "CA"},
-{"user_id": 5, "login_timestamp": ISODate("2025-04-22T11:30:30Z"), "location": "KR"},
+{"user_id": 1, "login_timestamp": ISODate("2025-04-20T09:10:30Z"), "location": "KR"},
+{"user_id": 2, "login_timestamp": ISODate("2025-04-20T12:10:30Z"), "location": "US"},
+{"user_id": 3, "login_timestamp": ISODate("2025-04-20T13:10:30Z"), "location": "KR"},
+{"user_id": 4, "login_timestamp": ISODate("2025-04-20T10:10:30Z"), "location": "CA"},
+{"user_id": 5, "login_timestamp": ISODate("2025-04-20T11:30:30Z"), "location": "KR"},
 ])
 db.login_events.find()
 ```
@@ -259,17 +259,14 @@ Projection 항목에 title만을 출력 하도록 하고 Plan을 확인 합니�
 Fetch 단계는 실제 document를 반환해 오는 단계입니다. 
 쿼리 projection 단계에서 인덱싱된 필드만 포함하도록 설정하면 별도의 fetch 단계 없이 쿼리를 실행할 수 있습니다.
 
-앞서 생성한 복합 인덱스를 활용해 쿼리를 실행하되, projection을 추가해보겠습니다.
+앞서 생성한 인덱스를 활용해 쿼리를 실행하되, projection을 추가해보겠습니다.
 
 ````
 db.movies.find(
 	{
-    	"cast":"Bill Murray",
-    	"year":{$gte:2000}
+    	"type":"Comedy"
 	},
-	{"_id": 0, "cast": 1, "year": 1, "title": 1}
-).sort(
-	{"title":1}
+	{"_id": 0, "type": 1}
 )
 ````
 
