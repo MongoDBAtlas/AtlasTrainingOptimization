@@ -70,7 +70,7 @@ Atlas의 Real Time 패널로 이동합니다.
 ```
 아래 Query를 실행한 후, Real Time Performance Panel에서 어떻게 나타나는지 확인합니다.
 ```
-> for(x=0;x<100000;x++) {
+> for(x=0;x<10000;x++) {
   db.listingsAndReviews_big_collection.find().limit(10).itcount()
 }
 ```
