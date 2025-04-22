@@ -103,7 +103,7 @@ Query Profiler를 이용해 slow/inefficient query를 식별하고, 해당 query
 ##### 5.3 Operation Rejectio Filters를 사용하여 해당 query shape와 일치하는 query는 실행되지 않도록 명령어 실행
 ```
 db.adminCommand({
-   setQuerySettings: <5.2에서 확인한 queryShapeHash값>,
+   setQuerySettings: '5.2에서 확인한 queryShapeHash값',
    settings: {
       reject: true
    }
