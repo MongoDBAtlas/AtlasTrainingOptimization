@@ -27,7 +27,10 @@ Atlas에 로그인 후 테스트용 데이터 베이스를 생성 합니다.
 생성을 위해 클러스터 생성 버튼을 클릭 하여 줍니다.   
 <img src="/00.pre-work/images/images20.png" width="90%" height="90%">    
 
-간략화된 배포 옵션을 선택 화면에서 배포 할 클러스터의 티어와 Cloud Provider 및 배포 지역을 선택 하여 줍니다. (추가 옵션을 주어 배포를 하기 위해서는 하단에 Go to Advanced Configuration 을 클릭 하여 볼 수 있습니다.)      
+간략화된 배포 옵션을 선택 화면에서 배포 할 클러스터의 티어와 Cloud Provider 및 배포 지역을 선택 하여 줍니다. (추가 옵션을 주어 배포를 하기 위해서는 하단에 Go to Advanced Configuration 을 클릭 하여 볼 수 있습니다.)
+
+MongoDB 버전은 8.0 버전을 선택합니다.
+
 <img src="/00.pre-work/images/images21.png" width="90%" height="90%">    
 
 Free tier 클러스터를 AWS 서울 리전에 배포 하도록 선택 합니다.    
